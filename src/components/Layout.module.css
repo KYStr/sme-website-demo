@@ -1,0 +1,35 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page,
+.home {
+  flex: 1;
+  animation: fade 0.45s ease;
+}
+
+.page {
+  padding-top: var(--header-h);
+}
+
+.home {
+  padding-top: 0;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page,
+  .home {
+    animation: none;
+  }
+}

@@ -1,7 +1,7 @@
 export function ProductsPage() {
   return (
-    <main style={{ padding: '6rem 1.5rem' }}>
+    <section>
       <h1>產品與服務</h1>
-    </main>
+    </section>
   )
 }

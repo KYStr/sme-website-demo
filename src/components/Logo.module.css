@@ -1,0 +1,31 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--paper);
+}
+
+.mark {
+  width: 2.35rem;
+  height: 2.35rem;
+  color: var(--brass);
+  flex: none;
+}
+
+.word {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.word strong {
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.word small {
+  color: var(--brass);
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+}
