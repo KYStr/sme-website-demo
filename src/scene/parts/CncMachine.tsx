@@ -32,17 +32,22 @@ function Mill({ position, rotation }: MachineProps) {
         <meshStandardMaterial color={palette.machine} roughness={0.46} metalness={0.62} />
       </RoundedBox>
       <Solid args={[1.45, 0.08, 0.08]} position={[0, 0.28, -0.8]} color={palette.caution} roughness={0.55} metalness={0.2} />
-      <Solid args={[1.42, 0.1, 0.78]} position={[0, 1.03, -0.28]} color={palette.steel} metalness={0.78} roughness={0.28} castShadow />
-      <Solid args={[0.42, 0.06, 0.34]} position={[0, 1.11, -0.28]} color={palette.brass} metalness={0.72} roughness={0.34} />
-      <Solid args={[0.52, 1.55, 0.48]} position={[0, 1.7, 0.48]} color={palette.machinePanel} metalness={0.55} roughness={0.42} castShadow />
-      <Solid args={[0.78, 0.42, 0.62]} position={[0, 2.22, 0.12]} color={palette.machine} metalness={0.58} roughness={0.4} castShadow />
-      <group ref={spindle} position={[0, 1.82, -0.02]}>
-        <Cylinder args={[0.11, 0.13, 0.42]} color={palette.steelDark} metalness={0.8} roughness={0.25} />
-        <Cylinder args={[0.028, 0.02, 0.32]} position={[0, -0.32, 0]} color={palette.brass} metalness={0.7} roughness={0.3} />
+      <Solid args={[1.28, 0.1, 0.7]} position={[0, 1.03, -0.22]} color={palette.steel} metalness={0.78} roughness={0.28} castShadow />
+      <Solid args={[0.34, 0.1, 0.16]} position={[-0.16, 1.13, -0.34]} color="#2c333b" metalness={0.45} roughness={0.45} />
+      <Solid args={[0.34, 0.1, 0.16]} position={[0.16, 1.13, -0.34]} color="#2c333b" metalness={0.45} roughness={0.45} />
+      <Cylinder args={[0.045, 0.045, 0.08, 16]} position={[0, 1.16, -0.34]} color={palette.steelDark} metalness={0.75} roughness={0.28} />
+      <Solid args={[0.46, 1.35, 0.42]} position={[0, 1.62, 0.42]} color={palette.machinePanel} metalness={0.55} roughness={0.42} castShadow />
+      <Solid args={[0.7, 0.36, 0.55]} position={[0, 2.12, 0.08]} color={palette.machine} metalness={0.58} roughness={0.4} castShadow />
+      <group ref={spindle} position={[0, 1.72, -0.08]}>
+        <Cylinder args={[0.07, 0.08, 0.28, 20]} color={palette.steel} metalness={0.84} roughness={0.2} />
+        <Cylinder args={[0.018, 0.012, 0.22, 12]} position={[0, -0.22, 0]} color="#d7dde4" metalness={0.7} roughness={0.25} />
       </group>
-      <Sparks position={[0, 1.42, -0.02]} />
-      <Frame />
-      <Solid args={[1.15, 0.72, 0.03]} position={[0, 1.55, -0.78]} color={palette.glass} transparent opacity={0.22} roughness={0.05} metalness={0.05} emissive="#7eb4c8" emissiveIntensity={0.25} />
+      <Sparks position={[0, 1.42, -0.08]} />
+      <Solid args={[1.42, 0.06, 0.05]} position={[0, 2.12, -0.74]} color={palette.steelDark} metalness={0.65} roughness={0.35} />
+      <Solid args={[1.42, 0.06, 0.05]} position={[0, 1.08, -0.74]} color={palette.steelDark} metalness={0.65} roughness={0.35} />
+      <Solid args={[0.06, 1.1, 0.05]} position={[-0.68, 1.6, -0.74]} color={palette.steelDark} metalness={0.65} roughness={0.35} />
+      <Solid args={[0.06, 1.1, 0.05]} position={[0.68, 1.6, -0.74]} color={palette.steelDark} metalness={0.65} roughness={0.35} />
+      <Solid args={[1.22, 0.92, 0.015]} position={[0, 1.6, -0.71]} color={palette.glass} transparent opacity={0.16} roughness={0.05} metalness={0.05} emissive="#9fd0de" emissiveIntensity={0.12} />
       <group position={[1.08, 1.28, -0.2]} rotation={[-0.45, 0.35, 0]}>
         <Solid args={[0.34, 0.46, 0.05]} color="#101316" metalness={0.45} roughness={0.4} />
         <mesh position={[0, 0.02, 0.03]}>
@@ -54,23 +59,6 @@ function Mill({ position, rotation }: MachineProps) {
         <sphereGeometry args={[0.055, 16, 16]} />
         <meshStandardMaterial color={palette.warm} emissive={palette.warm} emissiveIntensity={1.4} />
       </mesh>
-    </group>
-  )
-}
-
-function Frame() {
-  const posts: Array<[number, number, number]> = [
-    [-0.78, 1.45, -0.72],
-    [0.78, 1.45, -0.72],
-    [-0.78, 1.45, 0.55],
-    [0.78, 1.45, 0.55],
-  ]
-  return (
-    <group>
-      {posts.map((position) => (
-        <Solid key={position.join()} args={[0.06, 1.7, 0.06]} position={position} color={palette.steelDark} metalness={0.7} roughness={0.35} />
-      ))}
-      <Solid args={[1.62, 0.05, 0.05]} position={[0, 2.28, -0.72]} color={palette.steelDark} metalness={0.7} roughness={0.35} />
     </group>
   )
 }

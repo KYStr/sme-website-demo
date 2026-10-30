@@ -114,33 +114,38 @@ function Lighting({ progressRef, compact }: SceneProps) {
   const rack = useRef<THREE.SpotLight>(null)
   const cmm = useRef<THREE.PointLight>(null)
   const ship = useRef<THREE.PointLight>(null)
+  const sunIn = useRef(new THREE.Color('#9aafc2'))
+  const hemiIn = useRef(new THREE.Color('#8b97a3'))
+  const groundIn = useRef(new THREE.Color('#3a342c'))
+  const fogIn = useRef(new THREE.Color('#2a3036'))
   const { scene, gl } = useThree()
 
   useFrame(() => {
     const progress = progressRef.current
-    const inside = smoothstep(0.12, 0.48, progress)
+    const inside = smoothstep(0.1, 0.42, progress)
+    const depth = smoothstep(0.05, 0.32, progress)
     const open = smoothstep(0.04, 0.2, progress)
     if (sun.current) {
-      sun.current.intensity = THREE.MathUtils.lerp(2.65, 0.28, inside)
-      sun.current.color.set('#ffd2a8').lerp(new THREE.Color('#9aafc2'), inside)
+      sun.current.intensity = THREE.MathUtils.lerp(2.35, 0.42, inside)
+      sun.current.color.set('#ffd2a8').lerp(sunIn.current, inside)
     }
     if (hemi.current) {
-      hemi.current.intensity = THREE.MathUtils.lerp(0.62, 0.22, inside)
-      hemi.current.color.set('#c5d4e2').lerp(new THREE.Color('#66717c'), inside)
-      hemi.current.groundColor.set('#6e5b46').lerp(new THREE.Color('#241c16'), inside)
+      hemi.current.intensity = THREE.MathUtils.lerp(0.58, 0.42, inside)
+      hemi.current.color.set('#c5d4e2').lerp(hemiIn.current, inside)
+      hemi.current.groundColor.set('#6e5b46').lerp(groundIn.current, inside)
     }
-    if (door.current) door.current.intensity = open * THREE.MathUtils.lerp(7.5, 1.4, inside)
-    if (cnc.current) cnc.current.intensity = smoothstep(0.18, 0.4, progress) * (compact ? 4.5 : 7.5)
-    if (rack.current) rack.current.intensity = smoothstep(0.4, 0.62, progress) * 14
-    if (cmm.current) cmm.current.intensity = smoothstep(0.62, 0.82, progress) * 6.5
-    if (ship.current) ship.current.intensity = smoothstep(0.78, 0.96, progress) * 6
+    if (door.current) door.current.intensity = open * THREE.MathUtils.lerp(9, 3.2, inside)
+    if (cnc.current) cnc.current.intensity = 4 + smoothstep(0.1, 0.34, progress) * (compact ? 3.5 : 5.5)
+    if (rack.current) rack.current.intensity = smoothstep(0.38, 0.58, progress) * 16
+    if (cmm.current) cmm.current.intensity = 1.2 + smoothstep(0.55, 0.78, progress) * 7
+    if (ship.current) ship.current.intensity = 1.4 + smoothstep(0.72, 0.92, progress) * 8
     const fog = scene.fog
     if (fog instanceof THREE.Fog) {
-      fog.color.set('#e3d3bc').lerp(new THREE.Color('#121518'), inside)
-      fog.near = THREE.MathUtils.lerp(28, 7, inside)
-      fog.far = THREE.MathUtils.lerp(84, 36, inside)
+      fog.color.set('#e3d3bc').lerp(fogIn.current, depth)
+      fog.near = THREE.MathUtils.lerp(28, 6, depth)
+      fog.far = THREE.MathUtils.lerp(76, 20, depth)
     }
-    gl.toneMappingExposure = THREE.MathUtils.lerp(1.06, 1.18, inside)
+    gl.toneMappingExposure = THREE.MathUtils.lerp(1.05, 1.16, inside)
   })
 
   return (

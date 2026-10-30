@@ -1,4 +1,4 @@
-import { highlights, reasons, services } from './company.ts'
+import { highlights } from './company.ts'
 
 export type JourneyStation = {
   id: string
@@ -27,7 +27,7 @@ export const journeyStations: JourneyStation[] = [
     id: 'gate',
     index: '01',
     kicker: '01  進廠',
-    title: '先答應做得到的公差',
+    title: '先答應\n做得到的公差',
     body: '試製與小批量是本業。不跟量產廠比產能，比的是尺寸穩不穩、交期答不答得準。',
     stats: highlights,
   },
@@ -35,8 +35,12 @@ export const journeyStations: JourneyStation[] = [
     id: 'cnc',
     index: '02',
     kicker: '02  加工區',
-    title: '三件事，可以下單',
-    services: services.map((item) => ({ title: item.title, text: item.text })),
+    title: '三件事\n可以下單',
+    services: [
+      { title: 'CNC 加工', text: '車削、銑削，與圖面需要的二次加工。' },
+      { title: '精密零件訂製', text: '軸心、法蘭、支架，依圖完成。' },
+      { title: '少量多樣打樣', text: '單件到十數件，先做對再談批量。' },
+    ],
   },
   {
     id: 'rack',
@@ -55,14 +59,18 @@ export const journeyStations: JourneyStation[] = [
     id: 'cmm',
     index: '04',
     kicker: '04  量測室',
-    title: '選我們的理由很樸素',
-    reasons,
+    title: '選我們的理由\n很樸素',
+    reasons: [
+      { title: '出貨前複檢', text: '關鍵尺寸量過，才進箱子。' },
+      { title: '條件寫進工單', text: '材質與表面處理不靠記憶。' },
+      { title: '交期按小批排', text: '打樣有自己的節奏，不畫大餅。' },
+    ],
   },
   {
     id: 'ship',
     index: '05',
     kicker: '05  出貨區',
-    title: '下一站是你的收貨區',
+    title: '下一站是\n你的收貨區',
     body: '寫下材料、數量與期限。示範表單現在不會寄出。',
     cta: { label: '立即詢價', to: '/contact' },
   },

@@ -6,7 +6,7 @@ export const palette = {
   brass: '#d4b06a',
   brassDeep: '#8d6d38',
   roof: '#1d2227',
-  floorIn: '#4a5158',
+  floorIn: '#5c656e',
   floorOut: '#121416',
   apron: '#2a2e32',
   steel: '#d5dbe2',

@@ -13,14 +13,10 @@ export function Shipping() {
       <Solid args={[0.9, 0.28, 0.18]} position={[-2.4, 0.35, 33.55]} color={palette.rubber} roughness={0.9} />
       <Solid args={[0.9, 0.28, 0.18]} position={[2.3, 0.35, 33.55]} color={palette.rubber} roughness={0.9} />
       {Array.from({ length: 8 }, (_, index) => (
-        <Solid
-          key={index}
-          args={[0.28, 0.012, 1.1]}
-          position={[-1.5 + index * 0.42, 0.06, 29.2]}
-          color={index % 2 === 0 ? palette.caution : '#1b1e22'}
-          roughness={0.6}
-          metalness={0.1}
-        />
+        <mesh key={index} position={[-1.5 + index * 0.42, 0.058, 29.15]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[0.36, 0.9]} />
+          <meshBasicMaterial color={index % 2 === 0 ? '#e2b340' : '#1b1e22'} />
+        </mesh>
       ))}
     </group>
   )

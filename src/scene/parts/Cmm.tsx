@@ -22,12 +22,12 @@ export function Cmm({ position }: { position: [number, number, number] }) {
       <Solid args={[0.1, 1.25, 0.1]} position={[0.92, 0.95, 0]} color={palette.steelDark} metalness={0.7} roughness={0.3} />
       <Solid args={[2.05, 0.1, 0.14]} position={[0, 1.55, 0]} color={palette.machinePanel} metalness={0.6} roughness={0.35} />
       <group ref={carriage} position={[0, 1.48, 0]}>
-        <Solid args={[0.28, 0.12, 0.2]} color={palette.brass} metalness={0.7} roughness={0.34} />
-        <group ref={ram} position={[0, -0.28, 0]}>
-          <Solid args={[0.06, 0.55, 0.06]} color={palette.steel} metalness={0.8} roughness={0.22} />
-          <mesh position={[0, -0.32, 0]}>
-            <sphereGeometry args={[0.045, 16, 16]} />
-            <meshStandardMaterial color={palette.ruby} emissive={palette.ruby} emissiveIntensity={0.35} roughness={0.25} metalness={0.35} />
+        <Solid args={[0.26, 0.1, 0.18]} color={palette.steelDark} metalness={0.7} roughness={0.32} />
+        <group ref={ram} position={[0, -0.42, 0]}>
+          <Solid args={[0.045, 0.72, 0.045]} color={palette.steel} metalness={0.8} roughness={0.22} />
+          <mesh position={[0, -0.4, 0]}>
+            <sphereGeometry args={[0.028, 16, 16]} />
+            <meshStandardMaterial color={palette.ruby} roughness={0.28} metalness={0.3} />
           </mesh>
         </group>
       </group>

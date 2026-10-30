@@ -122,7 +122,8 @@ function Building() {
       <Solid args={[14, height, wall]} position={[0, height / 2, depth - wall / 2]} color={palette.claddingDeep} />
       <Solid args={[15.05, 0.28, 35.6]} position={[0, height + 0.08, 16.65]} color={palette.roof} metalness={0.48} roughness={0.46} castShadow />
       <Solid args={[15.05, 0.045, 0.08]} position={[0, height - 0.02, -0.98]} color={palette.brass} metalness={0.82} roughness={0.28} />
-      <Solid args={[14.5, 0.055, 0.06]} position={[0, doorH + 0.04, -0.04]} color={palette.brass} metalness={0.8} roughness={0.3} />
+      <Solid args={[4.35, 0.05, 0.05]} position={[-4.75, doorH + 0.08, -0.03]} color={palette.brass} metalness={0.8} roughness={0.3} />
+      <Solid args={[4.35, 0.05, 0.05]} position={[4.75, doorH + 0.08, -0.03]} color={palette.brass} metalness={0.8} roughness={0.3} />
       <Solid args={[0.055, 0.055, depth]} position={[-7.05, doorH + 0.04, depth / 2]} color={palette.brass} metalness={0.8} roughness={0.3} />
       <Solid args={[5.3, 0.07, 1.35]} position={[0, doorH + 0.12, -0.62]} color={palette.claddingDeep} metalness={0.5} roughness={0.4} />
       <Solid args={[5.15, 0.42, 0.46]} position={[0, doorH + 0.28, -0.08]} color="#1a1e23" metalness={0.4} roughness={0.5} />
@@ -288,17 +289,17 @@ function Interior() {
     <group>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.045, 17.15]} receiveShadow>
         <planeGeometry args={[13.4, 33.2]} />
-        <meshStandardMaterial color={palette.floorIn} roughness={0.72} metalness={0.18} />
+        <meshStandardMaterial color={palette.floorIn} roughness={0.86} metalness={0.06} />
       </mesh>
-      <Solid args={[0.08, 0.012, 30.5]} position={[0, 0.055, 17.4]} color={palette.brass} metalness={0.75} roughness={0.35} emissive={palette.brassDeep} emissiveIntensity={0.15} />
-      {Array.from({ length: 15 }, (_, index) => (
+      <Solid args={[0.018, 0.004, 29]} position={[0, 0.052, 17.2]} color="#8d7344" metalness={0.25} roughness={0.62} />
+      {Array.from({ length: 14 }, (_, index) => (
         <Solid
           key={index}
-          args={[index % 5 === 0 ? 0.28 : 0.16, 0.008, 0.02]}
-          position={[0.2, 0.058, 2.2 + index * 2]}
-          color={palette.brass}
-          metalness={0.7}
-          roughness={0.4}
+          args={[index % 4 === 0 ? 0.16 : 0.08, 0.004, 0.012]}
+          position={[0.12, 0.054, 2.4 + index * 2]}
+          color="#8d7344"
+          metalness={0.2}
+          roughness={0.6}
         />
       ))}
       {Array.from({ length: 8 }, (_, index) => (
@@ -317,7 +318,7 @@ function Interior() {
         />
       ))}
       <Solid args={[1.2, 0.07, 0.42]} position={[1.3, 5.78, 25.5]} color="#d5e2ef" emissive={palette.cool} emissiveIntensity={1.15} roughness={0.25} />
-      {[8.2, 16.4, 24.2].map((z) => (
+      {[5.2, 13.2, 22.4, 29.2].map((z) => (
         <group key={z}>
           <Cylinder args={[0.14, 0.16, 5.7]} position={[-5.35, 2.85, z]} color={palette.claddingDeep} metalness={0.45} roughness={0.48} />
           <Cylinder args={[0.2, 0.2, 0.08]} position={[-5.35, 0.08, z]} color={palette.brass} metalness={0.75} roughness={0.35} />
