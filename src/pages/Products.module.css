@@ -1,0 +1,151 @@
+.page {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.hero h1 {
+  max-width: 12em;
+  margin: 0.35rem 0 0.8rem;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+.hero p,
+.summary,
+.desc,
+.specs dd {
+  color: var(--muted);
+}
+
+.kicker,
+.cat {
+  margin: 0;
+  color: var(--brass);
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.6rem 0 1.2rem;
+}
+
+.chip {
+  min-height: 2.3rem;
+  padding: 0 0.9rem;
+  border: 1px solid rgba(212, 176, 106, 0.45);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.chip[data-on='true'] {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: calc(var(--header-h) + 0.8rem);
+  border: 1px solid rgba(158, 201, 216, 0.22);
+  background: rgba(16, 19, 22, 0.92);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(158, 201, 216, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(158, 201, 216, 0.16) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: rgba(212, 176, 106, 0.85);
+  transform: translateY(-3px);
+}
+
+.card:hover::before,
+.card:focus-within::before {
+  opacity: 1;
+}
+
+.drawing {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--blueprint);
+  background: rgba(12, 18, 22, 0.55);
+  transition: color 0.25s ease;
+}
+
+.card:hover .drawing,
+.card:focus-within .drawing {
+  color: var(--brass-bright);
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 1.05rem 1.2rem;
+}
+
+.body h2 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.45rem;
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 0.2rem 0.7rem;
+  margin: 0.85rem 0;
+}
+
+.specs dt {
+  color: var(--brass);
+  font-size: 0.85rem;
+}
+
+.specs dd {
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .page {
+    padding: 1.6rem 1rem 3rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
+}
