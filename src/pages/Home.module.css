@@ -34,7 +34,127 @@
 
 .loading,
 .fallbackPage {
-  min-height: 70vh;
+  min-height: 40vh;
+}
+
+.rest {
+  position: relative;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(198, 161, 90, 0.08), transparent 42%),
+    #121416;
+  scroll-margin-top: var(--header-h);
+}
+
+.section,
+.ctaBand {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 0;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--brass);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+}
+
+.section h2,
+.ctaBand h2 {
+  max-width: 14em;
+  margin: 0.4rem 0 0.8rem;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+.lede,
+.panel p,
+.ctaBand p,
+.feature span {
+  color: var(--muted);
+}
+
+.grid3,
+.featureRow {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.grid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.featureRow {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-bottom: 1rem;
+}
+
+.panel,
+.feature {
+  min-width: 0;
+  padding: 1.15rem 1rem 1.3rem;
+  background: rgba(23, 27, 31, 0.92);
+  border-top: 1px solid var(--brass);
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.feature:hover {
+  color: var(--ink);
+  background: var(--brass);
+}
+
+.feature:hover span {
+  color: var(--ink);
+}
+
+.panel h3,
+.feature strong {
+  margin: 0.35rem 0;
+  font-size: 1.2rem;
+}
+
+.index {
+  color: var(--brass);
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+}
+
+.ctaBand {
+  margin-top: 4.5rem;
+  margin-bottom: 4rem;
+  padding: 2.4rem 1.5rem 2.6rem;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(198, 161, 90, 0.1), transparent 48%),
+    #171b1f;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  min-height: 2.8rem;
+  padding: 0 1.15rem;
+  background: var(--brass);
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: var(--brass-bright);
+  color: var(--ink);
 }
 
 .loading {
@@ -44,9 +164,35 @@
   letter-spacing: 0.14em;
 }
 
+@media (max-width: 900px) {
+  .grid3,
+  .featureRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 760px) {
   .depth {
     right: 0.8rem;
     font-size: 0.7rem;
+  }
+
+  .section,
+  .ctaBand {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section {
+    padding-top: 3.2rem;
+  }
+
+  .grid3,
+  .featureRow {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBand {
+    margin-top: 2.5rem;
   }
 }
