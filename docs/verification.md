@@ -2,6 +2,8 @@
 
 日期：2026-10-30
 
+> 瘦身紀錄（2026-11-04）：原始 trace 檔（door-entry-trace-*.json、cdp-longtask-trace.json.gz 共 45 檔）與已被最終版取代的舊開門影片／定格（door-entry-960x600.webm、door-entry-11s／12s／13s.png）已打包為 [`verification-media/archive-2026-11.zip`](verification-media/archive-2026-11.zip)，檔名與內容不變，需要時解開即可。本文各節提到的 trace 連結請在該壓縮檔內找同名檔案。各輪結論、摘要（cdp-longtask-summary.json、motion-check.json）、最終版截圖與短片仍留在原處。原始 trace 可用 `scripts/` 內的腳本重新產生。
+
 環境：Windows，Node v24.14.0，npm 11.11.1。專案目錄 `sme-website-demo`。
 
 ## 2026-11-03：參訪動線、近景與停站動畫
