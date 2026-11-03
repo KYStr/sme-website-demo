@@ -12,7 +12,8 @@ A front-end portfolio demo for a fictional Taichung CNC job shop, FineForm Preci
 
 - 四個頁面：首頁、產品與服務、關於我們、聯絡詢價
 - 首頁六站捲動旅程：廠外、進廠、加工區、成品架、量測室、出貨區
-- 鏡頭沿 CatmullRom 曲線前進，卡片隨進度淡入
+- 主走道旁有 CNC 防護屏、工具櫃與棒材架；成品暫存、量測室與出貨區以地面標線和滑門分區
+- 鏡頭沿 CatmullRom 曲線前進；滾輪每次定位一站，文字只顯示當前站，拖動與觸控捲動會自動靠站
 - 不支援 WebGL，或系統開啟「減少動態效果」時，改為靜態廠房立面與直排內容
 - 產品頁 8 個示意品項、程式繪製的藍圖線稿、分類篩選
 - 關於頁沿革、通用型號設備表、品質流程
@@ -41,10 +42,10 @@ npm run build:gh
 會以 `/sme-website-demo/` 建置，並把 `dist/index.html` 複製成 `dist/404.html`，給 GitHub Pages 的子路徑用。
 
 ```bash
-npx playwright test
+npx playwright test --workers=1
 ```
 
-煙霧測試會自己建置並開 preview，在 360×800 與 1440×900 檢查四個路由、導覽與表單。
+煙霧測試會自己建置並開 preview，在 360×800 與 1440×900 檢查四個路由、導覽、表單，以及入口開門、滾輪反向、站點靠站與減少動態效果。六站的參訪方向、停站主體及工序關係見 [`docs/factory-route.md`](docs/factory-route.md)。12 張六站截圖在 [`docs/screenshots/`](docs/screenshots/)；開門短片、逐幀追蹤與獨立評分在 [`docs/verification.md`](docs/verification.md)。
 
 ## 部署
 

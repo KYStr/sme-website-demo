@@ -1,33 +1,38 @@
-import { lazy, Suspense, useEffect, useRef } from 'react'
+import { lazy, Suspense, useCallback, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { JourneyOverlay, StationStack } from '../components/JourneyOverlay.tsx'
+import { syncJourneyOverlay } from '../components/syncJourneyOverlay.ts'
 import { SceneBoundary } from '../components/SceneBoundary.tsx'
 import { StaticFactory } from '../components/StaticFactory.tsx'
 import { company, reasons, services } from '../data/company.ts'
 import { usePrefersReducedMotion, useScrollProgress, useWebGLSupport } from '../hooks/useScrollProgress.ts'
+import { useStationScroll } from '../hooks/useStationScroll.ts'
 import styles from './Home.module.css'
 
 const JourneyCanvas = lazy(() => import('../scene/JourneyCanvas.tsx'))
 
 export function HomePage() {
   const journeyRef = useRef<HTMLElement>(null)
-  const progress = useScrollProgress(journeyRef)
   const progressRef = useRef(0)
-  progressRef.current = progress
+  const wakeSceneRef = useRef<(() => void) | null>(null)
+  const depthRef = useRef<HTMLParagraphElement>(null)
   const reduced = usePrefersReducedMotion()
   const webgl = useWebGLSupport()
   const degrade = reduced || !webgl
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('snap-home', !degrade)
-    return () => document.documentElement.classList.remove('snap-home')
-  }, [degrade])
+  const onProgress = useCallback((progress: number) => {
+    progressRef.current = progress
+    wakeSceneRef.current?.()
+    syncJourneyOverlay(journeyRef.current, progress)
+    if (depthRef.current) depthRef.current.textContent = `DEPTH ${(progress * 34).toFixed(1)} m`
+  }, [])
+  useScrollProgress(journeyRef, onProgress, !degrade)
+  useStationScroll(journeyRef, !degrade, 6)
 
   const jump = (index: number) => {
     const node = journeyRef.current
     if (!node) return
     const top = node.getBoundingClientRect().top + window.scrollY + index * window.innerHeight
-    window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' })
+    window.scrollTo({ top, behavior: 'instant' })
   }
 
   return (
@@ -42,17 +47,14 @@ export function HomePage() {
           <div className={styles.sticky}>
             <Suspense fallback={<div className={styles.loading}>廠房準備中</div>}>
               <SceneBoundary fallback={<StaticFactory />}>
-                <JourneyCanvas progressRef={progressRef} />
+                <JourneyCanvas progressRef={progressRef} wakeSceneRef={wakeSceneRef} />
               </SceneBoundary>
             </Suspense>
-            <p className={`${styles.depth} num`} aria-hidden="true">
-              DEPTH {(progress * 34).toFixed(1)} m
+            <p ref={depthRef} className={`${styles.depth} num`} aria-hidden="true">
+              DEPTH 0.0 m
             </p>
-            <JourneyOverlay progress={progress} onJump={jump} />
+            <JourneyOverlay onJump={jump} />
           </div>
-          {Array.from({ length: 6 }, (_, index) => (
-            <div key={index} className={styles.snap} style={{ top: `${index * 100}vh` }} />
-          ))}
         </section>
       )}
       <div id="after-journey" className={styles.rest}>

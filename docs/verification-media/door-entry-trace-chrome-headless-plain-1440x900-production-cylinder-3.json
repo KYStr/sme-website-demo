@@ -1,0 +1,2021 @@
+{
+  "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00008A56) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "samples": [
+    {
+      "ms": 31,
+      "frameMs": 31,
+      "sceneProgress": 0.012,
+      "doorOpen": 0,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 60,
+      "frameMs": 29,
+      "sceneProgress": 0.026,
+      "doorOpen": 0,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 78,
+      "frameMs": 19,
+      "sceneProgress": 0.037,
+      "doorOpen": 0,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 106,
+      "frameMs": 28,
+      "sceneProgress": 0.044,
+      "doorOpen": 0.01,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 122,
+      "frameMs": 17,
+      "sceneProgress": 0.055,
+      "doorOpen": 0.048,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 149,
+      "frameMs": 26,
+      "sceneProgress": 0.062,
+      "doorOpen": 0.08,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 171,
+      "frameMs": 23,
+      "sceneProgress": 0.071,
+      "doorOpen": 0.133,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 195,
+      "frameMs": 23,
+      "sceneProgress": 0.078,
+      "doorOpen": 0.186,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 212,
+      "frameMs": 17,
+      "sceneProgress": 0.085,
+      "doorOpen": 0.245,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 231,
+      "frameMs": 19,
+      "sceneProgress": 0.09,
+      "doorOpen": 0.289,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 253,
+      "frameMs": 21,
+      "sceneProgress": 0.095,
+      "doorOpen": 0.337,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 269,
+      "frameMs": 16,
+      "sceneProgress": 0.101,
+      "doorOpen": 0.391,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 290,
+      "frameMs": 21,
+      "sceneProgress": 0.105,
+      "doorOpen": 0.428,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 311,
+      "frameMs": 21,
+      "sceneProgress": 0.11,
+      "doorOpen": 0.481,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 330,
+      "frameMs": 19,
+      "sceneProgress": 0.115,
+      "doorOpen": 0.524,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 347,
+      "frameMs": 17,
+      "sceneProgress": 0.119,
+      "doorOpen": 0.562,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 364,
+      "frameMs": 17,
+      "sceneProgress": 0.123,
+      "doorOpen": 0.597,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 385,
+      "frameMs": 21,
+      "sceneProgress": 0.126,
+      "doorOpen": 0.628,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 403,
+      "frameMs": 18,
+      "sceneProgress": 0.13,
+      "doorOpen": 0.665,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 427,
+      "frameMs": 24,
+      "sceneProgress": 0.133,
+      "doorOpen": 0.694,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 446,
+      "frameMs": 19,
+      "sceneProgress": 0.137,
+      "doorOpen": 0.73,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 465,
+      "frameMs": 19,
+      "sceneProgress": 0.14,
+      "doorOpen": 0.756,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 483,
+      "frameMs": 18,
+      "sceneProgress": 0.143,
+      "doorOpen": 0.78,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 500,
+      "frameMs": 18,
+      "sceneProgress": 0.146,
+      "doorOpen": 0.801,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 520,
+      "frameMs": 20,
+      "sceneProgress": 0.148,
+      "doorOpen": 0.82,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 541,
+      "frameMs": 22,
+      "sceneProgress": 0.151,
+      "doorOpen": 0.839,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 560,
+      "frameMs": 18,
+      "sceneProgress": 0.153,
+      "doorOpen": 0.858,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 576,
+      "frameMs": 16,
+      "sceneProgress": 0.155,
+      "doorOpen": 0.873,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 595,
+      "frameMs": 20,
+      "sceneProgress": 0.157,
+      "doorOpen": 0.885,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 613,
+      "frameMs": 18,
+      "sceneProgress": 0.159,
+      "doorOpen": 0.898,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 630,
+      "frameMs": 17,
+      "sceneProgress": 0.161,
+      "doorOpen": 0.909,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 652,
+      "frameMs": 21,
+      "sceneProgress": 0.163,
+      "doorOpen": 0.919,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 671,
+      "frameMs": 20,
+      "sceneProgress": 0.165,
+      "doorOpen": 0.93,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 688,
+      "frameMs": 17,
+      "sceneProgress": 0.167,
+      "doorOpen": 0.939,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 711,
+      "frameMs": 23,
+      "sceneProgress": 0.168,
+      "doorOpen": 0.947,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 731,
+      "frameMs": 20,
+      "sceneProgress": 0.17,
+      "doorOpen": 0.954,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 751,
+      "frameMs": 20,
+      "sceneProgress": 0.171,
+      "doorOpen": 0.96,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 772,
+      "frameMs": 21,
+      "sceneProgress": 0.173,
+      "doorOpen": 0.966,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 794,
+      "frameMs": 22,
+      "sceneProgress": 0.174,
+      "doorOpen": 0.972,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 817,
+      "frameMs": 22,
+      "sceneProgress": 0.176,
+      "doorOpen": 0.976,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 837,
+      "frameMs": 21,
+      "sceneProgress": 0.177,
+      "doorOpen": 0.981,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 859,
+      "frameMs": 21,
+      "sceneProgress": 0.178,
+      "doorOpen": 0.984,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 879,
+      "frameMs": 21,
+      "sceneProgress": 0.18,
+      "doorOpen": 0.987,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 904,
+      "frameMs": 25,
+      "sceneProgress": 0.181,
+      "doorOpen": 0.989,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 926,
+      "frameMs": 22,
+      "sceneProgress": 0.182,
+      "doorOpen": 0.992,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 948,
+      "frameMs": 22,
+      "sceneProgress": 0.183,
+      "doorOpen": 0.994,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 976,
+      "frameMs": 28,
+      "sceneProgress": 0.184,
+      "doorOpen": 0.995,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1009,
+      "frameMs": 33,
+      "sceneProgress": 0.185,
+      "doorOpen": 0.997,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1022,
+      "frameMs": 13,
+      "sceneProgress": 0.186,
+      "doorOpen": 0.998,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1053,
+      "frameMs": 31,
+      "sceneProgress": 0.187,
+      "doorOpen": 0.999,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1078,
+      "frameMs": 25,
+      "sceneProgress": 0.188,
+      "doorOpen": 0.999,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1097,
+      "frameMs": 20,
+      "sceneProgress": 0.188,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1120,
+      "frameMs": 23,
+      "sceneProgress": 0.189,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1146,
+      "frameMs": 26,
+      "sceneProgress": 0.19,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1171,
+      "frameMs": 25,
+      "sceneProgress": 0.19,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1193,
+      "frameMs": 22,
+      "sceneProgress": 0.191,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1208,
+      "frameMs": 15,
+      "sceneProgress": 0.191,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1228,
+      "frameMs": 20,
+      "sceneProgress": 0.192,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1246,
+      "frameMs": 18,
+      "sceneProgress": 0.192,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1262,
+      "frameMs": 15,
+      "sceneProgress": 0.193,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1281,
+      "frameMs": 20,
+      "sceneProgress": 0.193,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1302,
+      "frameMs": 21,
+      "sceneProgress": 0.193,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1320,
+      "frameMs": 18,
+      "sceneProgress": 0.194,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1340,
+      "frameMs": 19,
+      "sceneProgress": 0.194,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1361,
+      "frameMs": 21,
+      "sceneProgress": 0.194,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1380,
+      "frameMs": 19,
+      "sceneProgress": 0.194,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1398,
+      "frameMs": 18,
+      "sceneProgress": 0.195,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1418,
+      "frameMs": 20,
+      "sceneProgress": 0.195,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1441,
+      "frameMs": 23,
+      "sceneProgress": 0.195,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1460,
+      "frameMs": 19,
+      "sceneProgress": 0.195,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1481,
+      "frameMs": 21,
+      "sceneProgress": 0.196,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1498,
+      "frameMs": 17,
+      "sceneProgress": 0.196,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1515,
+      "frameMs": 17,
+      "sceneProgress": 0.196,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1539,
+      "frameMs": 24,
+      "sceneProgress": 0.196,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1562,
+      "frameMs": 23,
+      "sceneProgress": 0.197,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1583,
+      "frameMs": 21,
+      "sceneProgress": 0.197,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1603,
+      "frameMs": 20,
+      "sceneProgress": 0.197,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1625,
+      "frameMs": 22,
+      "sceneProgress": 0.197,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1643,
+      "frameMs": 18,
+      "sceneProgress": 0.197,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1663,
+      "frameMs": 20,
+      "sceneProgress": 0.197,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1682,
+      "frameMs": 19,
+      "sceneProgress": 0.197,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1702,
+      "frameMs": 20,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1719,
+      "frameMs": 18,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1742,
+      "frameMs": 22,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1763,
+      "frameMs": 21,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1781,
+      "frameMs": 18,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1800,
+      "frameMs": 19,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1816,
+      "frameMs": 16,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1832,
+      "frameMs": 16,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1849,
+      "frameMs": 17,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1866,
+      "frameMs": 17,
+      "sceneProgress": 0.198,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1884,
+      "frameMs": 18,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1902,
+      "frameMs": 18,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1918,
+      "frameMs": 16,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1935,
+      "frameMs": 17,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1960,
+      "frameMs": 25,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1976,
+      "frameMs": 16,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 1993,
+      "frameMs": 18,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2011,
+      "frameMs": 18,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2034,
+      "frameMs": 23,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2058,
+      "frameMs": 23,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2082,
+      "frameMs": 24,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2098,
+      "frameMs": 16,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2118,
+      "frameMs": 21,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2136,
+      "frameMs": 17,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2153,
+      "frameMs": 18,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2177,
+      "frameMs": 24,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2197,
+      "frameMs": 20,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2218,
+      "frameMs": 22,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2241,
+      "frameMs": 22,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2262,
+      "frameMs": 22,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2282,
+      "frameMs": 20,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2307,
+      "frameMs": 24,
+      "sceneProgress": 0.199,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2326,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2343,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2364,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2386,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2403,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2424,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2443,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2456,
+      "frameMs": 13,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2468,
+      "frameMs": 11,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2492,
+      "frameMs": 25,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2510,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2530,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2551,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2567,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2589,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2608,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2626,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2645,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2660,
+      "frameMs": 15,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2680,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2701,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2718,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2735,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2760,
+      "frameMs": 25,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2781,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2803,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2824,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2841,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2857,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2877,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2896,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2918,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2942,
+      "frameMs": 24,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2960,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2980,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 2997,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3018,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3031,
+      "frameMs": 14,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3050,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3074,
+      "frameMs": 24,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3090,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3109,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3129,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3145,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3160,
+      "frameMs": 15,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3180,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3201,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3220,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3239,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3253,
+      "frameMs": 14,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3276,
+      "frameMs": 24,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3299,
+      "frameMs": 23,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3319,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3331,
+      "frameMs": 12,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3347,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3363,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3385,
+      "frameMs": 23,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3405,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3420,
+      "frameMs": 15,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3440,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3457,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3477,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3498,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3515,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3531,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3545,
+      "frameMs": 14,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3565,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3582,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3602,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3617,
+      "frameMs": 15,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3636,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3656,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3668,
+      "frameMs": 12,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3687,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3708,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3721,
+      "frameMs": 13,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3733,
+      "frameMs": 12,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3754,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3767,
+      "frameMs": 14,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3789,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3809,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3832,
+      "frameMs": 23,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3848,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3873,
+      "frameMs": 25,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3884,
+      "frameMs": 11,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3911,
+      "frameMs": 27,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3927,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3944,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 3960,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4064,
+      "frameMs": 105,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4098,
+      "frameMs": 34,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4119,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4141,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4158,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4176,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4199,
+      "frameMs": 24,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4218,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4243,
+      "frameMs": 25,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4259,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4280,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4297,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4323,
+      "frameMs": 26,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4342,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4363,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4388,
+      "frameMs": 25,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4411,
+      "frameMs": 23,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4428,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4446,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4464,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4485,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4500,
+      "frameMs": 15,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4518,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4541,
+      "frameMs": 23,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4559,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4579,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4596,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4616,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4635,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4650,
+      "frameMs": 15,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4672,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4694,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4716,
+      "frameMs": 22,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4737,
+      "frameMs": 21,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4752,
+      "frameMs": 15,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4763,
+      "frameMs": 11,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4789,
+      "frameMs": 26,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4809,
+      "frameMs": 20,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4827,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4845,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4861,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4877,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4892,
+      "frameMs": 14,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4909,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4926,
+      "frameMs": 16,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4944,
+      "frameMs": 19,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4961,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4977,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 4995,
+      "frameMs": 18,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    },
+    {
+      "ms": 5012,
+      "frameMs": 17,
+      "sceneProgress": 0.2,
+      "doorOpen": 1,
+      "drawCalls": null,
+      "scrollY": 900
+    }
+  ]
+}

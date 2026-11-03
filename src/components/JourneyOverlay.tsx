@@ -1,34 +1,30 @@
 import { Link } from 'react-router-dom'
 import type { JourneyStation } from '../data/journey.ts'
 import { journeyStations } from '../data/journey.ts'
-import { smoothstep } from '../lib/smoothstep.ts'
 import styles from './JourneyOverlay.module.css'
 
 type OverlayProps = {
-  progress: number
   onJump: (index: number) => void
 }
 
-export function JourneyOverlay({ progress, onJump }: OverlayProps) {
-  const active = Math.round(progress * (journeyStations.length - 1))
+export function JourneyOverlay({ onJump }: OverlayProps) {
   return (
-    <div className={styles.overlay}>
+    <div className={styles.overlay} data-testid="journey-overlay" data-active-station="0">
       <div className={styles.scrim} />
       <div className={styles.stack}>
         {journeyStations.map((station, index) => {
-          const center = index / (journeyStations.length - 1)
-          const opacity = 1 - smoothstep(0.06, 0.15, Math.abs(progress - center))
-          const shift = (progress - center) * 36
           return (
             <article
               key={station.id}
+              data-testid={`journey-card-${station.id}`}
+              data-journey-index={index}
               className={styles.card}
               style={{
-                opacity,
-                transform: `translate3d(0, ${shift}px, 0)`,
-                visibility: opacity < 0.04 ? 'hidden' : 'visible',
+                opacity: index === 0 ? 1 : 0,
+                visibility: index === 0 ? 'visible' : 'hidden',
               }}
-              aria-hidden={opacity < 0.45}
+              aria-hidden={index !== 0}
+              inert={index !== 0}
             >
               <StationBody station={station} />
             </article>
@@ -44,7 +40,8 @@ export function JourneyOverlay({ progress, onJump }: OverlayProps) {
             key={station.id}
             type="button"
             className={styles.tick}
-            data-on={index === active}
+            data-journey-tick={index}
+            data-on={index === 0}
             aria-label={`前往${station.kicker}：${station.title}`}
             onClick={() => onJump(index)}
           >
@@ -118,7 +115,7 @@ export function StationStack() {
   return (
     <div className={styles.stackPage}>
       {journeyStations.map((station) => (
-        <section key={station.id} className={styles.staticCard}>
+        <section key={station.id} className={styles.staticCard} data-testid="static-journey-card">
           <StationBody station={station} />
         </section>
       ))}

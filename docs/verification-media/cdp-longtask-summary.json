@@ -1,0 +1,59 @@
+{
+  "capture": "Chrome CDP Tracing, production preview, 1440x900, Intel UHD/Direct3D11, before demand rendering",
+  "longTasks": [
+    {
+      "ms": 2340,
+      "durationMs": 172,
+      "name": "self"
+    },
+    {
+      "ms": 4562,
+      "durationMs": 86,
+      "name": "self"
+    }
+  ],
+  "longFrames": [
+    {
+      "ms": 2511,
+      "frameMs": 174
+    },
+    {
+      "ms": 4647,
+      "frameMs": 98
+    },
+    {
+      "ms": 4745,
+      "frameMs": 70
+    }
+  ],
+  "slowTraceEvents": [
+    {
+      "name": "FireAnimationFrame",
+      "durationMs": 171.68,
+      "ts": 4438203977,
+      "function": null,
+      "url": null
+    },
+    {
+      "name": "FunctionCall",
+      "durationMs": 171.63,
+      "ts": 4438203998,
+      "function": "Uv",
+      "url": "http://127.0.0.1:4173/assets/JourneyCanvas-CnJeuYsA.js"
+    },
+    {
+      "name": "FireAnimationFrame",
+      "durationMs": 85.48,
+      "ts": 4440426152,
+      "function": null,
+      "url": null
+    },
+    {
+      "name": "FunctionCall",
+      "durationMs": 85.42,
+      "ts": 4440426174,
+      "function": "Uv",
+      "url": "http://127.0.0.1:4173/assets/JourneyCanvas-CnJeuYsA.js"
+    }
+  ]
+}

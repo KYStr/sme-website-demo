@@ -1,0 +1,61 @@
+{
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "samples": [
+    {
+      "ms": -3,
+      "frameMs": -3,
+      "sceneProgress": 0.015,
+      "doorOpen": 0,
+      "scrollY": 600
+    },
+    {
+      "ms": 14,
+      "frameMs": 17,
+      "sceneProgress": 0.028,
+      "doorOpen": 0,
+      "scrollY": 600
+    },
+    {
+      "ms": 1647,
+      "frameMs": 1633,
+      "sceneProgress": 0.11,
+      "doorOpen": 0.48,
+      "scrollY": 600
+    },
+    {
+      "ms": 2080,
+      "frameMs": 433,
+      "sceneProgress": 0.153,
+      "doorOpen": 0.858,
+      "scrollY": 600
+    },
+    {
+      "ms": 2697,
+      "frameMs": 617,
+      "sceneProgress": 0.176,
+      "doorOpen": 0.976,
+      "scrollY": 600
+    },
+    {
+      "ms": 4013,
+      "frameMs": 1317,
+      "sceneProgress": 0.187,
+      "doorOpen": 0.999,
+      "scrollY": 600
+    },
+    {
+      "ms": 4080,
+      "frameMs": 67,
+      "sceneProgress": 0.189,
+      "doorOpen": 1,
+      "scrollY": 600
+    },
+    {
+      "ms": 5230,
+      "frameMs": 1150,
+      "sceneProgress": 0.194,
+      "doorOpen": 1,
+      "scrollY": 600
+    }
+  ]
+}

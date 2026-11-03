@@ -1,0 +1,62 @@
+[
+  {
+    "viewport": "1440x900",
+    "station": "cnc",
+    "expectedMotion": true,
+    "imageChanged": true,
+    "passed": true,
+    "beforeSha256": "00618560efc055493ebe94f30bf1c22ce40ef87c9933d186aaa69b7a88e29f84",
+    "afterSha256": "c07090caddec3add9b488d17bf8a5a1a55933fe6f05319b34e94bd50e0c6a495",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00008A56) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  {
+    "viewport": "1440x900",
+    "station": "sample-rack",
+    "expectedMotion": false,
+    "imageChanged": false,
+    "passed": true,
+    "beforeSha256": "ea590562ac6f361fbf8b5d136f3cb74eeb48aa8424c8d2dec5ae38990c284508",
+    "afterSha256": "ea590562ac6f361fbf8b5d136f3cb74eeb48aa8424c8d2dec5ae38990c284508",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00008A56) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  {
+    "viewport": "1440x900",
+    "station": "cmm",
+    "expectedMotion": true,
+    "imageChanged": true,
+    "passed": true,
+    "beforeSha256": "a3c24d3a2c9fdac5309256386fb086af00d59bd85abca9d6aecca3b64d20bb2a",
+    "afterSha256": "bd3e864898d52ad083c0c883ecc09d6b2696cdef8aa3927e899bce6537315b43",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00008A56) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  {
+    "viewport": "360x800",
+    "station": "cnc",
+    "expectedMotion": true,
+    "imageChanged": true,
+    "passed": true,
+    "beforeSha256": "78caca74dd944f8366bc426602397569e9e1df9e27662f7561ccbfa59894d032",
+    "afterSha256": "b726523b446669b0d035faf2a2d568b617bcd6e696547bf7592757fe8afaf9e4",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00008A56) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  {
+    "viewport": "360x800",
+    "station": "sample-rack",
+    "expectedMotion": false,
+    "imageChanged": false,
+    "passed": true,
+    "beforeSha256": "d30ee4690af04eae854c4eb454f056b809ae419f98ec06e871bac666e30a8a3c",
+    "afterSha256": "d30ee4690af04eae854c4eb454f056b809ae419f98ec06e871bac666e30a8a3c",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00008A56) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  {
+    "viewport": "360x800",
+    "station": "cmm",
+    "expectedMotion": true,
+    "imageChanged": true,
+    "passed": true,
+    "beforeSha256": "228f93c74bdf6a0505a26d1a7807636c8547a210599d359ae2aa2dd953ec7f1d",
+    "afterSha256": "aff48fda2b551d3ad8cf0ef4bb2416f1aedb5b62e46f4c21c55f9c7b27f0dabc",
+    "renderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x00008A56) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  }
+]

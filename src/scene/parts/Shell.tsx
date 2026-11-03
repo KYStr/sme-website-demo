@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react'
 import * as THREE from 'three'
 import { palette } from '../palette.ts'
 import { Cylinder, Solid } from '../solids.tsx'
+import { useStaticGeometryBatches } from '../useStaticGeometryBatches.ts'
 
 const height = 6.4
 const depth = 34
@@ -10,8 +11,9 @@ const doorHalf = 2.4
 const doorH = 3.55
 
 export function Shell() {
+  const rootRef = useStaticGeometryBatches()
   return (
-    <group>
+    <group ref={rootRef}>
       <Ground />
       <Building />
       <FacadeSign />
@@ -31,7 +33,7 @@ function Ground() {
         <planeGeometry args={[24, 15]} />
         <meshStandardMaterial color={palette.apron} roughness={0.88} metalness={0.08} />
       </mesh>
-      <GroundGrid />
+      <ExteriorYard />
       <ApproachTicks />
       <Cylinder args={[0.12, 0.14, 0.85]} position={[-3.7, 0.42, -2.55]} color={palette.claddingDeep} />
       <Cylinder args={[0.14, 0.14, 0.06]} position={[-3.7, 0.88, -2.55]} color={palette.brass} metalness={0.8} roughness={0.32} />
@@ -41,48 +43,45 @@ function Ground() {
   )
 }
 
-function GroundGrid() {
-  const material = useMemo(
-    () =>
-      new THREE.ShaderMaterial({
-        transparent: true,
-        depthWrite: false,
-        uniforms: { uColor: { value: new THREE.Color('#9ec3d2') } },
-        vertexShader: `
-          varying vec3 vW;
-          void main() {
-            vec4 world = modelMatrix * vec4(position, 1.0);
-            vW = world.xyz;
-            gl_Position = projectionMatrix * viewMatrix * world;
-          }
-        `,
-        fragmentShader: `
-          varying vec3 vW;
-          uniform vec3 uColor;
-          void main() {
-            if (vW.z > 0.15 && abs(vW.x) < 7.35) discard;
-            vec2 cell = abs(fract(vW.xz) - 0.5);
-            float minor = min(cell.x, cell.y);
-            vec2 majorCell = abs(fract(vW.xz / 5.0) - 0.5);
-            float major = min(majorCell.x, majorCell.y);
-            float alpha = smoothstep(0.04, 0.0, minor) * 0.34;
-            alpha += smoothstep(0.018, 0.0, major) * 0.4;
-            float fade = 1.0 - smoothstep(6.0, 30.0, length(vW.xz));
-            if (alpha * fade < 0.03) discard;
-            gl_FragColor = vec4(uColor, alpha * fade);
-          }
-        `,
-      }),
-    [],
-  )
-
-  useEffect(() => () => material.dispose(), [material])
-
+function ExteriorYard() {
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.03, -4]}>
-      <planeGeometry args={[64, 36]} />
-      <primitive object={material} attach="material" />
-    </mesh>
+    <group>
+      {[-12.4, -7.4, -2.4].map((z) => (
+        <Solid key={z} args={[24, 0.006, 0.03]} position={[0, 0.019, z]} color="#4c5458" roughness={0.94} />
+      ))}
+      {[-9.3, 9.3].map((x) => (
+        <Solid key={x} args={[0.07, 0.007, 12.4]} position={[x, 0.023, -7.2]} color="#d5b35b" roughness={0.88} />
+      ))}
+      <Solid args={[0.55, 0.015, 8.1]} position={[6.1, 0.026, -9.2]} color="#9ba3a2" roughness={0.88} />
+      <Solid args={[0.55, 0.015, 8.1]} position={[-6.1, 0.026, -9.2]} color="#9ba3a2" roughness={0.88} />
+      <Solid args={[2.6, 0.035, 0.4]} position={[0, 0.035, -1.4]} color="#495159" roughness={0.88} />
+      {[-1.12, -0.56, 0, 0.56, 1.12].map((x) => (
+        <Solid key={x} args={[0.04, 0.012, 0.33]} position={[x, 0.057, -1.4]} color="#222a2e" roughness={0.9} />
+      ))}
+      <Solid args={[9.2, 0.12, 0.28]} position={[-11.9, 0.08, -0.2]} color="#7a7e7d" roughness={0.92} />
+      <Solid args={[8.6, 0.12, 0.28]} position={[11.9, 0.08, -0.2]} color="#7a7e7d" roughness={0.92} />
+      <Solid args={[6.4, 3.2, 9.5]} position={[-18.8, 1.6, 1.4]} color="#343b40" roughness={0.76} />
+      <Solid args={[3.15, 2.45, 0.06]} position={[-18.6, 1.26, -3.38]} color="#677279" metalness={0.35} roughness={0.57} />
+      {Array.from({ length: 8 }, (_, index) => (
+        <Solid key={index} args={[3.12, 0.03, 0.075]} position={[-18.6, 0.24 + index * 0.29, -3.44]} color="#273139" metalness={0.52} roughness={0.46} />
+      ))}
+      <Solid args={[1.15, 0.48, 0.06]} position={[-21.3, 2.48, -3.39]} color="#b4c5c5" emissive="#769397" emissiveIntensity={0.55} roughness={0.35} />
+      <Solid args={[0.45, 0.08, 0.12]} position={[-16.2, 2.78, -3.43]} color="#e0d3a5" emissive={palette.warm} emissiveIntensity={0.9} roughness={0.3} />
+      <Solid args={[6.6, 3.8, 11.2]} position={[19, 1.9, 2.4]} color="#3c4246" roughness={0.74} />
+      {[1.5, 4.5, 7.5].map((z) => (
+        <group key={z}>
+          <Solid args={[0.08, 0.82, 1.85]} position={[15.66, 2.6, z]} color="#91a6ac" emissive="#5d7981" emissiveIntensity={0.68} roughness={0.36} />
+          <Solid args={[0.095, 0.045, 1.92]} position={[15.59, 3.03, z]} color="#b5a37a" metalness={0.42} roughness={0.48} />
+        </group>
+      ))}
+      <Solid args={[3.5, 2.8, 0.07]} position={[18.6, 1.48, -3.25]} color="#78848b" metalness={0.36} roughness={0.54} />
+      {Array.from({ length: 9 }, (_, index) => (
+        <Solid key={index} args={[3.45, 0.035, 0.078]} position={[18.6, 0.2 + index * 0.3, -3.31]} color="#303b43" metalness={0.5} roughness={0.5} />
+      ))}
+      <Solid args={[1.5, 0.5, 0.06]} position={[22, 2.63, -3.25]} color="#abc3c4" emissive="#789a9d" emissiveIntensity={0.6} roughness={0.36} />
+      <Solid args={[0.45, 0.08, 0.12]} position={[16.4, 3.05, -3.28]} color="#e0d3a5" emissive={palette.warm} emissiveIntensity={0.9} roughness={0.3} />
+      <Solid args={[6.9, 0.16, 11.6]} position={[19, 3.88, 2.4]} color="#262d32" metalness={0.22} roughness={0.62} />
+    </group>
   )
 }
 

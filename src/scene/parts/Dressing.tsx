@@ -1,9 +1,11 @@
 import { palette } from '../palette.ts'
 import { Cylinder, Solid } from '../solids.tsx'
+import { useStaticGeometryBatches } from '../useStaticGeometryBatches.ts'
 
 export function Dressing() {
+  const rootRef = useStaticGeometryBatches()
   return (
-    <group>
+    <group ref={rootRef}>
       <Solid args={[0.7, 1.35, 0.42]} position={[-5.15, 0.72, 7.4]} color={palette.machinePanel} metalness={0.45} roughness={0.5} castShadow />
       {[0.35, 0.62, 0.9, 1.16].map((y) => (
         <Solid key={y} args={[0.62, 0.02, 0.44]} position={[-5.15, y, 7.4]} color={palette.brassDeep} metalness={0.5} roughness={0.45} />

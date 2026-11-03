@@ -6,17 +6,20 @@ import styles from './JourneyCanvas.module.css'
 
 type JourneyCanvasProps = {
   progressRef: RefObject<number>
+  wakeSceneRef: RefObject<(() => void) | null>
 }
 
-function JourneyCanvas({ progressRef }: JourneyCanvasProps) {
+function JourneyCanvas({ progressRef, wakeSceneRef }: JourneyCanvasProps) {
   const compact = useCompact()
+  useEffect(() => () => { wakeSceneRef.current = null }, [wakeSceneRef])
   return (
     <div className={styles.frame} data-testid="factory-canvas">
       <Canvas
         className={styles.canvas}
-        dpr={compact ? [1, 1.5] : [1, 2]}
+        frameloop="demand"
+        dpr={compact ? [1, 1.5] : 0.75}
         shadows={!compact}
-        camera={{ fov: 38, near: 0.1, far: 180, position: [-5.6, 3.2, -17.4] }}
+        camera={{ fov: compact ? 46 : 38, near: 0.1, far: 180, position: [-5.6, 3.2, -17.4] }}
         gl={{
           antialias: true,
           alpha: false,
@@ -24,8 +27,9 @@ function JourneyCanvas({ progressRef }: JourneyCanvasProps) {
           toneMapping: THREE.ACESFilmicToneMapping,
           toneMappingExposure: 1.06,
         }}
-        onCreated={({ gl }) => {
+        onCreated={({ gl, invalidate }) => {
           gl.shadowMap.type = THREE.PCFSoftShadowMap
+          wakeSceneRef.current = () => invalidate()
         }}
       >
         <FactoryScene progressRef={progressRef} compact={compact} />

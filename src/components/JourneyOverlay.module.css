@@ -8,9 +8,18 @@
 .scrim {
   position: absolute;
   inset: 0;
+  transition: opacity 500ms ease;
   background:
     linear-gradient(90deg, rgba(8, 10, 12, 0.86) 0%, rgba(8, 10, 12, 0.62) 30%, rgba(8, 10, 12, 0.08) 54%, rgba(8, 10, 12, 0) 70%),
     linear-gradient(180deg, rgba(8, 10, 12, 0.45), transparent 22%, transparent 72%, rgba(8, 10, 12, 0.55));
+}
+
+@media (min-width: 761px) {
+  .overlay[data-active-station='3'] .scrim,
+  .overlay[data-active-station='4'] .scrim,
+  .overlay[data-active-station='5'] .scrim {
+    opacity: 0.45;
+  }
 }
 
 .stack {
@@ -29,6 +38,7 @@
 
 .copy {
   pointer-events: none;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.48);
 }
 
 .kicker {
@@ -229,8 +239,8 @@
       180deg,
       rgba(8, 10, 12, 0.28) 0%,
       rgba(8, 10, 12, 0) 30%,
-      rgba(8, 10, 12, 0.55) 58%,
-      rgba(8, 10, 12, 0.94) 100%
+      rgba(8, 10, 12, 0.64) 58%,
+      rgba(8, 10, 12, 0.84) 100%
     );
   }
 
@@ -241,7 +251,7 @@
     width: auto;
     right: 0.9rem;
     height: auto;
-    min-height: 13.5rem;
+    min-height: 18rem;
   }
 
   .title {
@@ -253,6 +263,25 @@
   .services p,
   .reasons p {
     font-size: 0.92rem;
+  }
+
+  .card[data-journey-index='5'] .body {
+    max-width: 13rem;
+  }
+
+  .card[data-journey-index='3'] {
+    top: 2.8rem;
+  }
+
+  .overlay[data-active-station='3'] .scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(8, 10, 12, 0.28) 0%,
+      rgba(8, 10, 12, 0) 40%,
+      rgba(8, 10, 12, 0.32) 60%,
+      rgba(8, 10, 12, 0.82) 82%,
+      rgba(8, 10, 12, 0.88) 100%
+    );
   }
 
   .stats {

@@ -7,10 +7,10 @@ const cameraKeys: Array<[number, number, number]> = [
   [0.05, 1.82, -2.35],
   [0.35, 1.78, 4.9],
   [-0.35, 1.95, 4.55],
-  [-0.7, 1.74, 15.15],
-  [-0.2, 1.9, 19.6],
-  [-1.15, 2.08, 20.35],
-  [-1.45, 2.12, 26.35],
+  [0.8, 1.78, 16.0],
+  [0.2, 1.9, 19.6],
+  [-0.9, 1.98, 21.75],
+  [-0.7, 2.08, 26.2],
 ]
 
 const lookKeys: Array<[number, number, number]> = [
@@ -19,10 +19,10 @@ const lookKeys: Array<[number, number, number]> = [
   [1.1, 1.55, 8.2],
   [2.7, 1.35, 9.2],
   [2.7, 1.4, 9.35],
-  [2.35, 1.32, 18.9],
-  [1.5, 1.05, 25.55],
-  [1.45, 0.9, 25.6],
-  [0.95, 0.72, 31.15],
+  [-1.5, 1.25, 18.9],
+  [0.2, 1.35, 25.55],
+  [1.45, 1.55, 25.6],
+  [-0.2, 0.55, 31.7],
 ]
 
 function makeCurve(keys: Array<[number, number, number]>) {
@@ -36,6 +36,20 @@ function makeCurve(keys: Array<[number, number, number]>) {
 
 export const cameraPosition = makeCurve(cameraKeys)
 export const cameraLook = makeCurve(lookKeys)
+
+// The narrow viewport needs a straighter view into each object. The walk
+// remains inside the clear centre aisle while the gaze alternates sides.
+const mobileCameraKeys = cameraKeys.map((key) => [...key] as [number, number, number])
+mobileCameraKeys[5] = [0.35, 1.76, 16.15]
+mobileCameraKeys[7] = [-0.9, 1.94, 20.9]
+mobileCameraKeys[8] = [-0.7, 1.92, 26.2]
+const mobileLookKeys = lookKeys.map((key) => [...key] as [number, number, number])
+mobileLookKeys[5] = [-2.65, 0.95, 18.85]
+mobileLookKeys[7] = [1.5, 1.55, 25.55]
+mobileLookKeys[8] = [-0.5, 0.32, 30.8]
+
+export const mobileCameraPosition = makeCurve(mobileCameraKeys)
+export const mobileCameraLook = makeCurve(mobileLookKeys)
 
 const stationPointIndex = [0, 2, 4, 5, 7, 8]
 const lastIndex = cameraKeys.length - 1

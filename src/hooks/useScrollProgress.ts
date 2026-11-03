@@ -1,33 +1,23 @@
 import { useEffect, useState, type RefObject } from 'react'
 
-export function useScrollProgress(ref: RefObject<HTMLElement | null>) {
-  const [progress, setProgress] = useState(0)
-
+export function useScrollProgress(ref: RefObject<HTMLElement | null>, onProgress: (progress: number) => void, enabled: boolean) {
   useEffect(() => {
     const element = ref.current
-    if (!element) return
-    let frame = 0
+    if (!enabled || !element) return
     const update = () => {
       const rect = element.getBoundingClientRect()
       const total = element.offsetHeight - window.innerHeight
       const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 0))
-      setProgress(total > 0 ? scrolled / total : 0)
-    }
-    const onScroll = () => {
-      cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(update)
+      onProgress(total > 0 ? scrolled / total : 0)
     }
     update()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
     return () => {
-      cancelAnimationFrame(frame)
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
     }
-  }, [ref])
-
-  return progress
+  }, [ref, onProgress, enabled])
 }
 
 export function usePrefersReducedMotion() {
