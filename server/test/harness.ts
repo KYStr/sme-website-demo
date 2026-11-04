@@ -51,17 +51,16 @@ export async function startTestApp(options: { env?: NodeJS.ProcessEnv; deps?: Pa
     base: `http://127.0.0.1:${address.port}`,
     db,
     close: () =>
-      new Promise((resolve, reject) => {
-        server.close((error) => {
+      new Promise((resolve) => {
+        server.close(() => {
           try {
             db.close()
           } catch {
             // 測試可能已經自己關掉。
           }
-          if (error) reject(error)
-          else resolve()
+          resolve()
         })
-        server.closeAllConnections()
+        server.closeIdleConnections()
       }),
   }
 }

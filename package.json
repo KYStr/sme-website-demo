@@ -15,8 +15,8 @@
     "lint": "oxlint",
     "typecheck": "tsc -b --pretty false",
     "preview": "vite preview",
-    "test": "node --disable-warning=ExperimentalWarning --test --test-force-exit \"server/test/**/*.test.ts\"",
-    "test:coverage": "node --disable-warning=ExperimentalWarning --experimental-test-coverage --test-coverage-include=server/** --test-coverage-include=shared/** --test --test-force-exit \"server/test/**/*.test.ts\"",
+    "test": "node --disable-warning=ExperimentalWarning --test \"server/test/**/*.test.ts\"",
+    "test:coverage": "node --disable-warning=ExperimentalWarning --experimental-test-coverage --test-coverage-include=server/** --test-coverage-include=shared/** --test \"server/test/**/*.test.ts\"",
     "check": "npm run lint && npm run typecheck && npm test",
     "test:e2e": "playwright test"
   },
