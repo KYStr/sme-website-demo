@@ -1,4 +1,5 @@
 import type { Handler } from '../http/context.ts'
+import { issueFormToken } from '../security/formToken.ts'
 
 export const health: Handler = (ctx) => {
   const time = ctx.clock().toISOString()
@@ -8,5 +9,11 @@ export const health: Handler = (ctx) => {
     ctx.send(503, { status: 'degraded', version: ctx.config.version, db: 'error', time })
     return
   }
-  ctx.send(200, { status: 'ok', version: ctx.config.version, db: 'ok', time })
+  ctx.send(200, {
+    status: 'ok',
+    version: ctx.config.version,
+    db: 'ok',
+    time,
+    formToken: issueFormToken(ctx.config.formSecret, ctx.clock().getTime()),
+  })
 }

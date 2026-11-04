@@ -23,6 +23,7 @@ export function corsHeaders(origin: string | null, config: Config): Record<strin
     headers['access-control-allow-origin'] = origin
     headers['access-control-allow-methods'] = 'GET, POST, PATCH, OPTIONS'
     headers['access-control-allow-headers'] = 'Content-Type, Authorization'
+    headers['access-control-expose-headers'] = 'Retry-After, Idempotent-Replayed'
     headers['access-control-max-age'] = '600'
   }
   return headers

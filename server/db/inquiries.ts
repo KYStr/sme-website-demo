@@ -54,6 +54,12 @@ export function mapInquiry(row: InquiryRow): StoredInquiry {
   }
 }
 
+export function peekNextTicket(db: DatabaseSync, now: Date): string {
+  const year = taipeiYear(now)
+  const counter = db.prepare('SELECT last_seq FROM ticket_counters WHERE year = ?').get(year)
+  return formatTicket(year, Number(counter?.last_seq ?? 0) + 1)
+}
+
 export function findBySubmissionId(db: DatabaseSync, submissionId: string): StoredInquiry | undefined {
   const row = db.prepare('SELECT * FROM inquiries WHERE submission_id = ?').get(submissionId)
   return row ? mapInquiry(row) : undefined

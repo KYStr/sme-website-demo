@@ -10,6 +10,7 @@ import { type LogEntry, writeLog } from './http/logger.ts'
 import { compileRoutes, type RouteDef } from './http/router.ts'
 import { matchRoute } from './http/router.ts'
 import { createRoutes } from './routes/index.ts'
+import { SlidingWindow } from './security/rateLimit.ts'
 
 export type AppDeps = {
   db: DatabaseSync
@@ -17,6 +18,7 @@ export type AppDeps = {
   clock?: () => Date
   logger?: (entry: LogEntry) => void
   extraRoutes?: RouteDef[]
+  submitLimit?: number
 }
 
 type Reply = (status: number, body: unknown, headers?: Record<string, string>) => void
@@ -31,6 +33,7 @@ export function createApp(deps: AppDeps): (req: IncomingMessage, res: ServerResp
   const routes = compileRoutes([...createRoutes(), ...(deps.extraRoutes ?? [])])
   const clock = deps.clock ?? (() => new Date())
   const logger = deps.logger ?? writeLog
+  const submitLimiter = new SlidingWindow(deps.submitLimit ?? 5, 10 * 60 * 1000, () => clock().getTime())
 
   return async function handle(req, res) {
     const started = Date.now()
@@ -139,6 +142,7 @@ export function createApp(deps: AppDeps): (req: IncomingMessage, res: ServerResp
         clock,
         ip: clientIp(req, deps.config.trustProxy),
         url,
+        submitLimiter,
         send: reply,
         sendError,
       }

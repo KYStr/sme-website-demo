@@ -3,7 +3,7 @@ import { after, before, describe, test } from 'node:test'
 import { BODY_LIMIT_BYTES } from '../config.ts'
 import { FIELD_KEYS, FIELD_LIMITS, type FieldKey } from '../../shared/inquiry.ts'
 import { assertError, readJson, startTestApp, type TestApp } from './harness.ts'
-import { postInquiry, validBody } from './fixtures.ts'
+import { agedToken, postInquiry, validBody } from './fixtures.ts'
 
 const clock = new Date('2026-06-15T02:00:00.000Z')
 
@@ -19,7 +19,7 @@ function fieldsOf(body: unknown): Record<string, string> {
 
 describe('詢價驗證', { concurrency: false }, () => {
   before(async () => {
-    app = await startTestApp({ deps: { clock: () => clock } })
+    app = await startTestApp({ deps: { clock: () => clock, submitLimit: 1000 } })
   })
 
   after(async () => {
@@ -49,7 +49,9 @@ describe('詢價驗證', { concurrency: false }, () => {
   })
 
   test('六欄都沒填時，每一欄都回 required', async () => {
-    const result = await readJson(await postInquiry(app.base, { submissionId: crypto.randomUUID() }))
+    const result = await readJson(
+      await postInquiry(app.base, { submissionId: crypto.randomUUID(), formToken: agedToken(clock) }),
+    )
     assert.equal(result.status, 422)
     assertError(result.body, 'validation_failed')
     assert.deepEqual(
@@ -169,13 +171,14 @@ describe('詢價驗證', { concurrency: false }, () => {
     assertError(tooBig.body, 'payload_too_large')
   })
 
-  test('同一個 submissionId 再送不會變成第二筆', async () => {
+  test('同一個 submissionId 與相同內容再送不會變成第二筆', async () => {
     const body = validBody()
     const first = await readJson(await postInquiry(app.base, body))
     assert.equal(first.status, 201)
     const second = await readJson(await postInquiry(app.base, body))
-    assert.equal(second.status, 409)
-    assertError(second.body, 'submission_conflict')
+    assert.equal(second.status, 201)
+    assert.equal((second.body as { ticket: string }).ticket, (first.body as { ticket: string }).ticket)
+    assert.equal(second.headers.get('idempotent-replayed'), 'true')
     const count = app.db.prepare('SELECT COUNT(*) AS total FROM inquiries WHERE submission_id = ?').get(body.submissionId)
     assert.equal(Number(count?.total), 1)
   })

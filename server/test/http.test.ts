@@ -63,12 +63,12 @@ test('健康檢查回版本、資料庫狀態與注入的時間', async () => {
   const response = await fetch(`${app.base}/api/health`)
   const result = await readJson(response)
   assert.equal(result.status, 200)
-  assert.deepEqual(result.body, {
-    status: 'ok',
-    version: '0.2.0',
-    db: 'ok',
-    time: '2026-11-04T12:00:00.000Z',
-  })
+  const body = result.body as { status: string; version: string; db: string; time: string; formToken: string }
+  assert.equal(body.status, 'ok')
+  assert.equal(body.version, '0.2.0')
+  assert.equal(body.db, 'ok')
+  assert.equal(body.time, '2026-11-04T12:00:00.000Z')
+  assert.match(body.formToken, /^\d+\.[0-9a-f]{64}$/)
   assert.equal(result.headers.get('x-content-type-options'), 'nosniff')
   assert.equal(result.headers.get('referrer-policy'), 'no-referrer')
   assert.equal(result.headers.get('cache-control'), 'no-store')
