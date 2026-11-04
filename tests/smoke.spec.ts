@@ -152,8 +152,9 @@ for (const viewport of [
 
       await page.locator('#field-email').fill('qa@fineform.example')
       await page.locator('#field-phone').fill('04-2000-0000')
+      await expect(page.getByTestId('contact-form')).toHaveAttribute('data-api', 'online')
       await page.getByRole('button', { name: '送出詢問' }).click()
-      await expect(page.getByTestId('form-notice')).toHaveText('表單串接將於第 2 步完成，目前尚未送出')
+      await expect(page.getByTestId('form-notice')).toContainText(/FF-\d{4}-\d{4,}/)
       await expect(page.getByText('已成功')).toHaveCount(0)
       await expect(page.getByText('送出成功')).toHaveCount(0)
     })
