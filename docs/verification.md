@@ -6,6 +6,60 @@
 
 環境：Windows，Node v24.14.0，npm 11.11.1。專案目錄 `sme-website-demo`。
 
+## 2026-11-04：詢價 API、儲存與管理列表
+
+環境仍是 Windows、Node v24.14.0。API 用 `node:http` 與 `node:sqlite`，沒有執行期依賴。規則在 `shared/inquiry.ts`，前台與伺服器各跑一次。
+
+### 自動測試
+
+- `npm test`：56 passed（`node:test`）。覆蓋率 lines 94.04%、branches 86.09%、functions 95.28%（`npm run test:coverage`，範圍 `server/**` 與 `shared/**`）。
+- `npx tsc -b --pretty false` 通過。`npx oxlint` exit 0，警告仍是原有的 Header effect、FactoryScene immutability，以及管理列表把網址上的關鍵字同步進輸入框的那一行。
+- `npx playwright test tests/inquiry.spec.ts`：6 passed（約 46 秒）。涵蓋在線送出看到編號、連點只留一筆、422 回到 Email 欄、健康檢查回 200 HTML 時改走離線、429 保留草稿、管理列表遮罩與改狀態、360px 列表不橫向溢出。
+- 完整 `npx playwright test`：20 passed、1 skipped、1 failed（約 8 分鐘）。失敗的是既有的 `1440px › camera wakes after a stationary pause`：`data-scene-progress` 停在 0.177，沒有超過 0.195。同一支測試的 360px 通過，兩個寬度的聯絡表單案例也通過。這條是首頁鏡頭阻尼，不是這一步的表單。桌面觸控測試仍依原設定跳過。
+
+### curl 攻擊
+
+對 `127.0.0.1:3099` 與 `3100` 用 `curl.exe -i`。令牌用測試用的 `FORM_SECRET` 簽成五秒前。完整標頭與本文在 [`verification-media/step2-curl.txt`](verification-media/step2-curl.txt)。金鑰是 `.env.example` 裡那個公開假值。
+
+| 送出 | 結果 |
+| --- | --- |
+| 六欄都空 | 422，六個 `required` |
+| Email `not-an-email` | 422，`fields.email = invalid_email` |
+| 公司 101 個「測」 | 422，`fields.company = too_long` |
+| `website` 填了網址，Email 同時是壞的 | 201，`FF-2026-0001`，沒有 `Idempotent-Replayed`。列表裡沒有這筆 |
+| 內容是 `<script>alert('xss')</script>` | 201，`FF-2026-0001`。單筆 `message` 是這段原文 |
+| 同一個 submission id 再送一次 | 201，同一張編號，`Idempotent-Replayed: true` |
+| 公司是 `'); DROP TABLE inquiries; --` | 201。接著的列表仍是 JSON，`total` 為 1，公司名稱原樣 |
+| 同一 IP 的第 6 次嘗試 | 429，`Retry-After: 599`，訊息寫約 10 分鐘、599 秒，並說明這筆沒有送出 |
+| `GET /api/inquiries` 不帶金鑰 | 401，`請帶入管理金鑰` |
+
+蜜罐那次與 XSS 那次都顯示 `FF-2026-0001`：假成功預看下一號但不佔號，下一筆真實詢問用的就是這一號。列表只有真實那筆。
+
+### 沒有後端時
+
+`vite preview` 開在 `127.0.0.1:4175`，API 沒有聽 3001。重新整理 `/contact` 之後，標題下是「現在連不上詢價服務，這張表單不會假裝送出。」表單下方是「目前連不上詢價服務，表單沒有送出。」以及「改用電子郵件」。沒有編號。
+
+- [1440×900](verification-media/step2-contact-offline-1440.png)
+- [360×800](verification-media/step2-contact-offline-360.png)
+
+### 資料庫與金鑰沒有進 git
+
+```text
+.gitignore:20:.env    .env
+.gitignore:23:data/   data/inquiries.db
+.gitignore:23:data/   data/e2e.sqlite
+.gitignore:21:.env.*  .env.local
+.gitignore:28:*.sqlite foo.sqlite
+```
+
+`git check-ignore -q .env.example` 結束代碼是 1，範例檔會被追蹤。`.env.example` 的 `ADMIN_KEY` 與 `FORM_SECRET` 都是 `example-only-not-a-secret`。測試用 `test-admin-key-1234`，Playwright 用 `playwright-admin-key`，都是假值。
+
+Email 掃描只看到 `.example`、`example.com` 的 placeholder，以及測試字串。種子電話由 `04-2000-00` 加上兩位數組成，也就是 `04-2000-0001` 到 `04-2000-0012`，沒有別的電話形狀。
+
+### 這一步沒有做的部署
+
+沒有把 API 放到付費服務，沒有執行 `wrangler deploy`。GitHub Pages 仍是靜態檔；那個網址上的表單會走離線備案。
+
 ## 2026-11-03：參訪動線、近景與停站動畫
 
 - 六站依中央走道安排左右交替視線：入口向前、右側 CNC、左側樣品架、右側量測機、出貨隔間門口向內看打包區。桌面與手機共用通道；手機另調停站視線，避免窄畫幅把主體擠出。各站主體、工序和停站動作詳見 [`factory-route.md`](factory-route.md)。
