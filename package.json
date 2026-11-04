@@ -18,6 +18,8 @@
     "test": "node --disable-warning=ExperimentalWarning --test \"server/test/**/*.test.ts\"",
     "test:coverage": "node --disable-warning=ExperimentalWarning --experimental-test-coverage --test-coverage-include=server/** --test-coverage-include=shared/** --test \"server/test/**/*.test.ts\"",
     "check": "npm run lint && npm run typecheck && npm test",
+    "seed": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/seed.ts",
+    "db:reset": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env server/seed.ts --reset",
     "test:e2e": "playwright test"
   },
   "dependencies": {

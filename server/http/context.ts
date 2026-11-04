@@ -19,6 +19,7 @@ export type RequestContext = {
   ip: string
   url: URL
   submitLimiter: SlidingWindow
+  adminLimiter: SlidingWindow
   send: (status: number, body: unknown, headers?: Record<string, string>) => void
   sendError: (status: number, code: string, message: string, extra?: ErrorExtra) => void
 }

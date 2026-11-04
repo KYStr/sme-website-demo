@@ -183,10 +183,10 @@ describe('詢價驗證', { concurrency: false }, () => {
     assert.equal(Number(count?.total), 1)
   })
 
-  test('列表還沒開放時，GET 不會把資料漏出去', async () => {
+  test('沒帶管理金鑰時，列表不會把資料漏出去', async () => {
     const result = await readJson(await fetch(`${app.base}/api/inquiries`))
-    assert.equal(result.status, 405)
-    assert.equal(result.headers.get('allow'), 'POST')
+    assert.equal(result.status, 401)
+    assertError(result.body, 'unauthorized')
   })
 })
 

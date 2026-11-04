@@ -1,9 +1,10 @@
 import { createHash } from 'node:crypto'
 import type { DatabaseSync, SQLOutputValue } from 'node:sqlite'
 import type { InquiryFields } from '../../shared/inquiry.ts'
+import type { InquiryStatus } from '../../shared/status.ts'
 import { formatTicket, taipeiYear } from '../../shared/time.ts'
 
-export type InquiryStatus = 'new' | 'read' | 'archived'
+export type { InquiryStatus }
 export type InquirySource = 'web' | 'seed'
 
 export type StoredInquiry = {
@@ -139,4 +140,51 @@ export function insertInquiry(
     }
     throw error
   }
+}
+
+export function findInquiryById(db: DatabaseSync, id: number): StoredInquiry | undefined {
+  const row = db.prepare('SELECT * FROM inquiries WHERE id = ?').get(id)
+  return row ? mapInquiry(row) : undefined
+}
+
+export function escapeLike(input: string): string {
+  return input.replace(/[\\%_]/g, (char) => `\\${char}`)
+}
+
+const LIKE = "LIKE ? ESCAPE '\\'"
+
+export function queryInquiries(
+  db: DatabaseSync,
+  query: { status: InquiryStatus | null; keyword: string | null; page: number; pageSize: number },
+): { total: number; rows: StoredInquiry[] } {
+  const pattern = query.keyword === null ? null : `%${escapeLike(query.keyword)}%`
+  const where = `
+    (? IS NULL OR status = ?)
+    AND (
+      ? IS NULL
+      OR company ${LIKE}
+      OR contact_name ${LIKE}
+      OR subject ${LIKE}
+      OR message ${LIKE}
+      OR ticket ${LIKE}
+    )
+  `
+  const filters = [query.status, query.status, query.keyword, pattern, pattern, pattern, pattern, pattern]
+  const totalRow = db.prepare(`SELECT COUNT(*) AS total FROM inquiries WHERE ${where}`).get(...filters)
+  const offset = (query.page - 1) * query.pageSize
+  const rows = db
+    .prepare(`SELECT * FROM inquiries WHERE ${where} ORDER BY created_at DESC, id DESC LIMIT ? OFFSET ?`)
+    .all(...filters, query.pageSize, offset)
+  return { total: Number(totalRow?.total ?? 0), rows: rows.map((row) => mapInquiry(row)) }
+}
+
+export function updateInquiryStatus(
+  db: DatabaseSync,
+  id: number,
+  from: InquiryStatus,
+  to: InquiryStatus,
+): StoredInquiry | undefined {
+  const updated = db.prepare('UPDATE inquiries SET status = ? WHERE id = ? AND status = ?').run(to, id, from)
+  if (Number(updated.changes) !== 1) return findInquiryById(db, id)
+  return findInquiryById(db, id)
 }

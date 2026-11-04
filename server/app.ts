@@ -34,6 +34,7 @@ export function createApp(deps: AppDeps): (req: IncomingMessage, res: ServerResp
   const clock = deps.clock ?? (() => new Date())
   const logger = deps.logger ?? writeLog
   const submitLimiter = new SlidingWindow(deps.submitLimit ?? 5, 10 * 60 * 1000, () => clock().getTime())
+  const adminLimiter = new SlidingWindow(10, 10 * 60 * 1000, () => clock().getTime())
 
   return async function handle(req, res) {
     const started = Date.now()
@@ -143,6 +144,7 @@ export function createApp(deps: AppDeps): (req: IncomingMessage, res: ServerResp
         ip: clientIp(req, deps.config.trustProxy),
         url,
         submitLimiter,
+        adminLimiter,
         send: reply,
         sendError,
       }
